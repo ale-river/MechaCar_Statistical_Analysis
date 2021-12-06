@@ -3,7 +3,7 @@
 For any project it is important to set a Working Directory. Here are the steps:
 1. In the R menu screen, go to Session, click Set Working Directory, then select Choose Directory.
 
-![working_directory1]()
+![working_directory1](resources/working_directory1.png)
 
 2. Navigate to the folder on your computer and select Open. If you click on the Files tab in your bottom-right multi-tool pane, notice that the folder now represents your active working directory:
 
