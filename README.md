@@ -7,11 +7,11 @@ For any project it is important to set a Working Directory. Here are the steps:
 
 2. Navigate to the folder on your computer and select Open. If you click on the Files tab in your bottom-right multi-tool pane, notice that the folder now represents your active working directory:
 
-![working_directory2]()
+![working_directory2](resources/working_directory2.png)
 
 3. create a new folder in your active directory using the "New Folder" button. For the purposes of this first section of the module, let's name this new folder "01_Demo." Once you have created the folder, press the refresh ( ) button to refresh the directory to see your new folder.
 
-![working_directory3]()
+![working_directory3](resources/working_directory3.png)
 
 # **Installations and Utilities:**
 
@@ -100,7 +100,7 @@ Example:
 ```
 `xlab()` and `ylab()`: To change the titles of our x-axis and y-axis.
 `element_text()`: Function to 45 degrees and our `hjust` argument to 1. The `hjust` argument tells ggplot that our rotated labels should be aligned horizontally to our tick marks.
-![bar_plot]()
+![bar_plot](resources/bar_plot.png)
 
 ```
 Example 2:
@@ -113,7 +113,7 @@ or
 > plt + geom_point() + labs(x="Engine Size (L)", y="City Fuel-Efficiency (MPG)", color="Vehicle Class") #add scatter plot with labels
 ```
 `scale_x_discrete()` and `scale_y_continuous()`
-![geom_plot]()
+![geom_plot](resources/geom_plot.png)
 
 ```
 Example 3:
@@ -123,9 +123,9 @@ or
 > plt <- ggplot(mpg,aes(x=manufacturer,y=hwy)) #import dataset into ggplot2
 > plt + geom_boxplot() + theme(axis.text.x=element_text(angle=45,hjust=1)) #add boxplot and rotate x-axis labels 45 degrees
 ```
-![plot_boxplot]()
+![plot_boxplot](resources/plot_boxplot.png)
 
-![box whisker plot]()
+![box whisker plot](resources/box%20whisker%20plot.png)
 
 ```
 Example 4:
@@ -133,7 +133,7 @@ Example 4:
 > plt <- ggplot(mpg_summary, aes(x=class,y=factor(year),fill=Mean_Hwy))
 > plt + geom_tile() + labs(x="Vehicle Class",y="Vehicle Year",fill="Mean Highway (MPG)") #create heatmap with labels
 ```
-![heat_maps]()
+![heat_maps](resources/heat_maps.png)
 
 ```
 Example 5:
@@ -142,7 +142,7 @@ Example 5:
 > theme(axis.text.x=element_text(angle=45,hjust=1)) + #rotate x-axis labels 45 degrees
 > geom_point() #overlay scatter plot on top
 ```
-![whisky_box_plots]()
+![whisky_box_plots](resources/whisky_box_plots.png)
 
 ```
 Example 6:
@@ -152,7 +152,7 @@ Example 6:
 > geom_errorbar(aes(ymin=Mean_Engine-SD_Engine,ymax=Mean_Engine+SD_Engine)) #overlay with error bars
 ```
 `facet()`: Function to the end of our plotting statement.
-![layering_plot]()
+![layering_plot](resources/layering_plot.png)
 
 ```
 Example 7:
@@ -160,14 +160,14 @@ Example 7:
 > plt + geom_boxplot() + facet_wrap(vars(MPG_Type)) + #create multiple boxplots, one for each MPG type
 > theme(axis.text.x=element_text(angle=45,hjust=1),legend.position = "none") + xlab("Manufacturer") #rotate x-axis labels
 ```
-![faceted two]()
+![faceted two](resources/faceted%20two.png)
 
 `shapiro.test()`: Function only requires the numeric vector of values you wish to test.
 ```
 > ggplot(mtcars,aes(x=wt)) + geom_density() #visualize distribution using density plot
 > shapiro.test(mtcars$wt)
 ```
-![Test for Normality]()
+![Test for Normality](resources/Qualitative%20Test%20for%20Normality.png)
 
 `sample_n()`: Function from dplyr, the resulting sample distributions should be similar to the input population data.
 Arguments:
@@ -180,7 +180,7 @@ Example of Sample or Population:
 > plt <- ggplot(population_table,aes(x=log10(Miles_Driven))) #import dataset into ggplot2
 > plt + geom_density() #visualize distribution using density plot
 ```
-! [Random sampling]()
+! [Random sampling](resources/Random%20sampling.png)
 
 
 ### ***Identifying Statistical Test Types***
@@ -211,7 +211,7 @@ Example of Sample or Population:
  >The **p-value**, or probability value, tells us the likelihood that we would see similar results if we tested our data again, if the null hypothesis is true.
  > A **significance level** to determine which hypothesis is most likely to be true, we compare the p-value against a significance level. (also denoted as alpha or ɑ) Is a predetermined cutoff for our hypothesis test.
 
-![significance_table]()
+![significance_table](resources/significance%20table.png)
 
 > *Type I error* (also known as a false positive error)—an error in which we reject the null hypothesis when it is actually true. In other words, the observations and measurements used in our statistical test should have been attributed to random chance, but we attributed them to something else.
 > *Type II error* (also known as a false negative error)—an error in which we fail to reject the null hypothesis when it is actually false. In other words, our analysis demonstrates that the observations were due to random chance, but they were not. The observations and measurements used in our statistical test failed to reflect an external force or influence to our problem.
@@ -235,7 +235,7 @@ Arguments:
 > plt + geom_density() #visualize distribution using density plot
 >t.test(log10(sample_table$Miles_Driven),mu=mean(log10(population_table$Miles_Driven))) #compare sample versus population means
 ```
-![One-Sample t-Tes]()
+![One-Sample t-Tes](resources/One-Sample%20t-Tes.png)
 
 - **Two-Sample t-Test**: Determines whether the means of two samples are statistically different.
 In other words, a two-sample t-Test is used to test the following hypotheses:
@@ -266,7 +266,7 @@ Arguments:
 -_paired tells the t.test() function to perform a paired t-test. This value must be set to TRUE.
 -_alternative tells the t.test() function if the hypothesis is one-sided (one-tailed) or two-sided (two-tailed). The options for the alternative argument are "two.sided," "less," or "greater." By default, the t.test() function assumes a two-sided t-test.
 
-![pair t-test]()
+![pair t-test](resources/pair%20t-test.png)
 
 - **ANOVA Test**: The most straightforward way to do this is to use the analysis of variance (ANOVA) test, which is used to compare the means of a continuous numerical variable across a number of groups (or factors in R).
 Two different types of ANOVA tests:
@@ -296,7 +296,7 @@ Arguments:
 > Ideal Negative Correlation where r=1 is where two variables move to opposite direction.
 > No correlation is where r=0 two valuables are not correlated and completely independent between each other.
 Coefficient of correlation strenght:
-![coefficient of correlation]()
+![coefficient of correlation](resources/coefficient%20of%20correlation.png)
 
 `cor()`: Function to perform a correlation analysis between two numeric variables.
 Arguments:
@@ -312,7 +312,7 @@ In the mtcars dataset, there are a number of numeric columns that we can use to 
 > used_matrix <- as.matrix(used_cars[,c("Selling_Price","Present_Price","Miles_Driven")]) #convert data frame into numeric matrix
 > cor(used_matrix)
 ```
-![correlation]()
+![correlation](resources/correlation.png)
 
 - **Linear Regression**: Is a statistical model that is used to predict a continuous dependent variable based on one or more independent variables fitted to the equation of a line.
 <y = mx + b>
@@ -344,7 +344,7 @@ Arguments:
 > plt <- ggplot(mtcars,aes(x=hp,y=qsec)) #import dataset into ggplot2
 > plt + geom_point() + geom_line(aes(y=yvals), color = "red") #plot scatter and linear model
 ```
-![Linear Regression]()
+![Linear Regression](resources/Linear%20Regression.png)
 
 - **Multiple Linear Regression**: Is a statistical model that extends the scope and flexibility of a simple linear regression model. Instead of using a single independent variable to account for all variability observed in the dependent variable, a multiple linear regression uses multiple independent variables to account for parts of the total variance observed in the dependent variable.
 > As a result, the linear regression equation is no longer y = mx + b. Instead, the multiple linear regression equation becomes y = m1x1 + m2x2 + … + mnxn + b, for all independent x variables and their m coefficients.
